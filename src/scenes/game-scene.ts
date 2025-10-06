@@ -27,6 +27,7 @@ export class GameScene extends Phaser.Scene {
     this.load.image('corvette', 'src/assets/corvette.png');
     this.load.image('phantom', 'src/assets/phantom.png');
     this.load.image('bg', 'src/assets/bg.jpg');
+    this.load.image('vanguard', 'src/assets/vanguard.png');
   }
   create() {
     
@@ -71,6 +72,8 @@ export class GameScene extends Phaser.Scene {
     this.humanPlayer.units.push(ship);
     const ship2 = new Ship(this, 900, 900, 'phantom', this.humanPlayer);
     this.humanPlayer.units.push(ship2);
+        const ship3 = new Ship(this, 900, 600, 'vanguard', this.humanPlayer);
+    this.humanPlayer.units.push(ship3);
   }
 
   update(time: number, delta: number) {

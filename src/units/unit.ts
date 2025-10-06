@@ -74,7 +74,7 @@ export class Unit extends Phaser.GameObjects.Container {
     }
 
     moveUnitTo(x: number, y: number, rotation?: number) {
-        this.movement.moveTo(x, y, rotation); // delegates to MovementComponent
+        this.movement.moveTo2(x, y, rotation); // delegates to MovementComponent
     }
 
 

@@ -66,28 +66,22 @@ scene.input.on('pointermove', (pointer: Phaser.Input.Pointer) => {
 
 });
 scene.input.on('pointerup', (pointer: Phaser.Input.Pointer) => {
-    if (!this._dragActive || !this._dragStart || !this._dragEnd) return; // guard
+    if (!this._dragActive || !this._dragStart || !this._dragEnd) return;
 
-    const cam = this.scene.cameras.main;
-
-    // Rotation
     const dx = this._dragEnd.x - this._dragStart.x;
     const dy = this._dragEnd.y - this._dragStart.y;
     const rotation = Math.atan2(dy, dx);
 
-    // Move selected units
+    // Issue move orders
     this.player.selectedUnits.forEach(unit => {
-        unit.movement.checkpoints.push({
-            position: new Phaser.Math.Vector2(this._dragStart!.x, this._dragStart!.y),
-            rotation: rotation
-        });
+        const shiftDown = this.scene.input.keyboard?.addKey(Phaser.Input.Keyboard.KeyCodes.SHIFT).isDown;
+        if (!shiftDown) unit.movement.clearCheckpoints();
+        unit.moveUnitTo(this._dragStart!.x, this._dragStart!.y, rotation);
     });
 
-    // Reset drag state
     this._dragActive = false;
     this._dragStart = undefined;
     this._dragEnd = undefined;
-
     this._clearPreviewLine();
 });
 
