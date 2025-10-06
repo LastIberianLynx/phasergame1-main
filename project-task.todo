@@ -1,0 +1,52 @@
+5- 0ctober - 2025
+Iberian Lynx
+
+📦 Project Setup:
+  ☐ Review basic project code
+  ☐ Create Phaser game instance
+
+🌍 Universe + Player + PlayerController + BasicUnit (SpaceShip):
+  ☐ Load assets
+  ☐ Add Player, PlayerController v
+  ☐ Add BasicUnit sprite v
+  ☐ Unit Selection v
+  ☐ Unit Shader v
+  ☐ Unit Movement, Transform Checkpoints
+
+🔫 Unit abilities / Default Attack / Signal Target Jam:
+  ☐ Create projectile sprite
+  ☐ Fire towards direction vs fire towards unit
+  ☐ Add cooldown or rate limit to firing
+  ☐ Clean up projectiles when off-screen
+
+👾 Enemies & Spawning:
+  ☐ PlayerControllerAI manages Player
+  ☐ Create enemy sprite and group
+  ☐ Spawn enemies
+  ☐ Clean up enemies when off-screen or destroyed
+
+💥 Collisions:
+  ☐ Collisions
+  ☐ Ally projectiles should collide only with enemies?
+
+📊 UI & Polish:
+  ☐ Ship health
+  ☐ Basic UI for testing
+
+extra:
+selection by area
+
+---
+
+Player
+PlayerController, PlayerControllerAI.
+Level - Battle level.
+Abilities, default attack, Target Signal Jammer (confuses enemy ship).
+Movement, by checkpoints of transforms, lerping through, arrows control it.
+Unit selection, unit movement.
+
+Background stars universe with paralax.
+Ships, AI
+explosions, bullets.
+
+need to try cursor ai
